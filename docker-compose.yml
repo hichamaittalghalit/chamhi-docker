@@ -366,5 +366,3 @@ services:
       networks:
         - frontend
         - backend
-
-
