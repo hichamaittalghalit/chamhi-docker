@@ -6,7 +6,7 @@
     git clone https://github.com/hichamaittalghalit/chamhi-docker
 
 
-2 - Enter the laradock folder and rename env-example to .env.
+2 - Enter the "chamhi-docker" folder and rename env-example to .env.
 
     cp env-example .env
 
