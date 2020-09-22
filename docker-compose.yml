@@ -120,7 +120,6 @@ services:
           - no_proxy
       volumes:
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
-        - docker-in-docker:/certs/client
         - ./php-worker/supervisord.d:/etc/supervisord.d
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
@@ -135,14 +134,9 @@ services:
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
         - DOCKER_HOST=tcp://docker-in-docker:2376
-        - DOCKER_TLS_VERIFY=1
-        - DOCKER_TLS_CERTDIR=/certs
-        - DOCKER_CERT_PATH=/certs/client
       networks:
         - frontend
         - backend
-      links:
-        - docker-in-docker
 
 ### PHP-FPM ##############################################
     php-fpm:
@@ -215,24 +209,17 @@ services:
       volumes:
         - ./php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
-        - docker-in-docker:/certs/client
       expose:
         - "9000"
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
-        - DOCKER_HOST=tcp://docker-in-docker:2376
-        - DOCKER_TLS_VERIFY=1
-        - DOCKER_TLS_CERTDIR=/certs
-        - DOCKER_CERT_PATH=/certs/client
         - FAKETIME=${PHP_FPM_FAKETIME}
       depends_on:
         - workspace
       networks:
         - backend
-      links:
-        - docker-in-docker
 
 ### PHP Worker ############################################
     php-worker:
