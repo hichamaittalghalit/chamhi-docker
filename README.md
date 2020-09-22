@@ -11,6 +11,20 @@
     cp env-example .env
 
 
-3 - Run your containers:
+##SCRIPTS
 
-    docker-compose up -d nginx mysql workspace php-worker php-fpm memcached adminer
+1 - Run containers
+
+    sh run.sh
+
+2 - Stop containers
+
+    sh stop.sh
+
+3 - Enter the Workspace container
+
+    sh run.sh
+    
+4 - Stop & Run Containers, & Enter To Workspace Containers    
+
+    sh reload.sh
