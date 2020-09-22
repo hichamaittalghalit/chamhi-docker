@@ -287,21 +287,6 @@ services:
         - frontend
         - backend
 
-### Minio ################################################
-    minio:
-      build: ./minio
-      volumes:
-        - ${DATA_PATH_HOST}/minio/data:/export
-        - ${DATA_PATH_HOST}/minio/config:/root/.minio
-      ports:
-        - "${MINIO_PORT}:9000"
-      environment:
-        - MINIO_ACCESS_KEY=access
-        - MINIO_SECRET_KEY=secretkey
-      networks:
-        - frontend
-        - backend
-
 ### MySQL ################################################
     mysql:
       build:
@@ -341,7 +326,7 @@ services:
         args:
           - INSTALL_MSSQL=${ADM_INSTALL_MSSQL}
       ports:
-        - "${ADM_PORT}:8080"
+        - "${ADM_PORT}:8081"
       depends_on:
         - php-fpm
       networks:

@@ -298,10 +298,6 @@ MYSQL_ENTRYPOINT_INITDB=./mysql/docker-entrypoint-initdb.d
 
 MEMCACHED_HOST_PORT=11211
 
-### MINIO #################################################
-
-MINIO_PORT=9000
-
 ### ADMINER ###############################################
 
 ADM_PORT=8081
