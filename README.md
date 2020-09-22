@@ -11,7 +11,7 @@
     cp env-example .env
 
 
-##SCRIPTS
+## SCRIPTS
 
 1 - Run containers
 
