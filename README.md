@@ -15,7 +15,7 @@
 
 1 - Run containers
 
-    sh run.sh
+    sh up.sh
 
 2 - Stop containers
 
