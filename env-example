@@ -5,7 +5,7 @@
 ### Paths #################################################
 
 # Point to the path of your applications code on your host
-APP_CODE_PATH_HOST=../
+APP_CODE_PATH_HOST=../projects/
 
 # Point to where the `APP_CODE_PATH_HOST` should be in the container
 APP_CODE_PATH_CONTAINER=/var/www
@@ -145,7 +145,7 @@ WORKSPACE_INSTALL_PYTHON3=false
 WORKSPACE_INSTALL_POWERLINE=false
 WORKSPACE_INSTALL_SUPERVISOR=false
 WORKSPACE_INSTALL_IMAGE_OPTIMIZERS=false
-WORKSPACE_INSTALL_IMAGEMAGICK=false
+WORKSPACE_INSTALL_IMAGEMAGICK=true
 WORKSPACE_INSTALL_TERRAFORM=false
 WORKSPACE_INSTALL_DUSK_DEPS=false
 WORKSPACE_INSTALL_PG_CLIENT=false
@@ -300,5 +300,5 @@ MEMCACHED_HOST_PORT=11211
 
 ### ADMINER ###############################################
 
-ADM_PORT=8081
+ADM_PORT=8080
 ADM_INSTALL_MSSQL=false
